@@ -6,6 +6,8 @@ import { ArcjetGuard, ArcjetModule, fixedWindow, shield } from '@arcjet/nest';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthModule } from '@thallesp/nestjs-better-auth';
 import { auth } from './lib/auth/auth';
+import { PrismaModule } from './lib/database/prisma.module';
+import { UserModule } from './module/user/user.module';
 
 @Module({
   imports: [
@@ -25,6 +27,8 @@ import { auth } from './lib/auth/auth';
       ],
     }),
     AuthModule.forRoot({ auth }),
+    PrismaModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [
