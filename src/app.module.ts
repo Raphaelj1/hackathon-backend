@@ -8,6 +8,7 @@ import { AuthModule } from '@thallesp/nestjs-better-auth';
 import { auth } from './lib/auth/auth';
 import { PrismaModule } from './lib/database/prisma.module';
 import { UserModule } from './module/user/user.module';
+import { HackathonModule } from './module/hackathon/hackathon.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { UserModule } from './module/user/user.module';
     AuthModule.forRoot({ auth }),
     PrismaModule,
     UserModule,
+    HackathonModule,
   ],
   controllers: [AppController],
   providers: [
